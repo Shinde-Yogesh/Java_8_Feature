@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Question_Asked_In_Companies {
 	public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class Question_Asked_In_Companies {
 		*/
 		
 		//number array
-		int array[] =  {5,9,11,2,8,21,1};
+//		int array[] =  {5,9,11,2,8,21,1};
 //		secondHighestNumber(array);
 //		secondLoweNumber(array);
 //		print_Start_With_One(array);
@@ -27,8 +28,9 @@ public class Question_Asked_In_Companies {
 		//String array
 		String value[] = {"java","techi", "springboot", "microservices"}; 
 //		longestStingArray(value);
-		add_Some_key_between_Sting(value);
+//		add_Some_key_between_Sting(value);
 //		
+		print_Between_the_lenght();
 	}
 	// group by here work like how many copies are there 
 		public static void number_of_charOccarrance(String str)
@@ -223,5 +225,17 @@ public class Question_Asked_In_Companies {
 			String result = String.join(",", asList);
 			System.out.println(result);
 			
+		}
+		public static void print_Between_the_lenght()
+		{
+			IntStream One_upto_ten = IntStream.rangeClosed(1, 10);
+			One_upto_ten.forEach(System.out :: println);
+			
+			System.out.println("Between the range ");
+			
+			 IntStream.rangeClosed(1, 10)
+			.skip(1)
+			.limit(8)
+			.forEach(System.out :: println);
 		}
 }
