@@ -13,7 +13,8 @@ public class Question_Asked_In_Companies {
 //		number_of_charOccarrance(str);
 //		greaterThanOneCharOccarance(str);
 //		uniqCharinStr(str);
-		firstNonRepeatChar(str);
+//		firstNonRepeatChar(str);
+		firstRepeatChar(str);
 	}
 	// group by here work like how many copies are there 
 		public static void number_of_charOccarrance(String str)
@@ -95,6 +96,25 @@ public class Question_Asked_In_Companies {
 					.entrySet()
 					.stream()
 					.filter(x -> x.getValue() == 1)
+					.findFirst()
+					.get()
+					.getKey();
+			
+			System.out.println(fist_non_Repeat);
+		  }
+		
+		public static void firstRepeatChar (String str)
+		{ 
+			Map<String, List<String>> all_Occarance  =  Arrays.stream(str.split(""))
+					.collect(Collectors.groupingBy(s -> s));
+			System.out.println(all_Occarance);
+			
+			String fist_non_Repeat = Arrays.stream(str.split(""))
+					.collect(Collectors
+							.groupingBy(Function.identity(),LinkedHashMap :: new,Collectors.counting()))
+					.entrySet()
+					.stream()
+					.filter(x -> x.getValue() > 1)
 					.findFirst()
 					.get()
 					.getKey();
