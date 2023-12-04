@@ -10,17 +10,22 @@ import java.util.stream.Collectors;
 
 public class Question_Asked_In_Companies {
 	public static void main(String[] args) {
-		String str = "ilovejavatechi";
-//		number_of_charOccarrance(str);
-//		greaterThanOneCharOccarance(str);
-//		uniqCharinStr(str);
-//		firstNonRepeatChar(str);
-//		firstRepeatChar(str);
+	/*	String str = "ilovejavatechi";
+		number_of_charOccarrance(str);
+		greaterThanOneCharOccarance(str);
+		uniqCharinStr(str);
+		firstNonRepeatChar(str);
+		firstRepeatChar(str);
+		*/
 		
 		//number array
-		int array[] =  {5,9,11,2,8,21,1};
+//		int array[] =  {5,9,11,2,8,21,1};
 //		secondHighestNumber(array);
-		secondLoweNumber(array);
+//		secondLoweNumber(array);
+		
+		//String array
+		String value[] = {"java","techi", "springboot", "microservices"}; 
+		longestStingArray(value);
 		
 	}
 	// group by here work like how many copies are there 
@@ -185,4 +190,11 @@ public class Question_Asked_In_Companies {
 			System.out.println(secondeLowerVal);
 			
 		 }
+		public static void longestStingArray(String array[])
+		{
+			String Longestlength = Arrays.stream(array)
+			.reduce((word1 , word2) -> word1.length() > word2.length() ? word1 : word2)
+			.get();
+			System.out.println(Longestlength);
+		}
 }
