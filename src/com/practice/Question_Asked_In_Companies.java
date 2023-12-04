@@ -22,11 +22,12 @@ public class Question_Asked_In_Companies {
 		int array[] =  {5,9,11,2,8,21,1};
 //		secondHighestNumber(array);
 //		secondLoweNumber(array);
-		print_Start_With_One(array);
+//		print_Start_With_One(array);
 		
 		//String array
-//		String value[] = {"java","techi", "springboot", "microservices"}; 
+		String value[] = {"java","techi", "springboot", "microservices"}; 
 //		longestStingArray(value);
+		add_Some_key_between_Sting(value);
 //		
 	}
 	// group by here work like how many copies are there 
@@ -214,5 +215,13 @@ public class Question_Asked_In_Companies {
 					.collect(Collectors.toList());
 			
 			System.out.println(startWithOne);
+		}
+		
+		public static void add_Some_key_between_Sting(String array[])
+		{
+			List<String> asList = Arrays.asList(array);
+			String result = String.join(",", asList);
+			System.out.println(result);
+			
 		}
 }
