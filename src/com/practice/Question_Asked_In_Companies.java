@@ -19,14 +19,15 @@ public class Question_Asked_In_Companies {
 		*/
 		
 		//number array
-//		int array[] =  {5,9,11,2,8,21,1};
+		int array[] =  {5,9,11,2,8,21,1};
 //		secondHighestNumber(array);
 //		secondLoweNumber(array);
+		print_Start_With_One(array);
 		
 		//String array
-		String value[] = {"java","techi", "springboot", "microservices"}; 
-		longestStingArray(value);
-		
+//		String value[] = {"java","techi", "springboot", "microservices"}; 
+//		longestStingArray(value);
+//		
 	}
 	// group by here work like how many copies are there 
 		public static void number_of_charOccarrance(String str)
@@ -196,5 +197,22 @@ public class Question_Asked_In_Companies {
 			.reduce((word1 , word2) -> word1.length() > word2.length() ? word1 : word2)
 			.get();
 			System.out.println(Longestlength);
+		}
+		public static void print_Start_With_One(int array[])
+		{
+			List<String> number_tostring_convert = Arrays.stream(array)
+			.boxed()
+			.map(s -> s +"")
+			.collect(Collectors.toList());
+			
+			System.out.println(number_tostring_convert);
+			
+			List<String> startWithOne = Arrays.stream(array)
+					.boxed()
+					.map(s -> s +"")
+					.filter(s -> s.startsWith("1"))
+					.collect(Collectors.toList());
+			
+			System.out.println(startWithOne);
 		}
 }
