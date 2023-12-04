@@ -19,7 +19,8 @@ public class Question_Asked_In_Companies {
 		
 		//number array
 		int array[] =  {5,9,11,2,8,21,1};
-		secondHighestNumber(array);
+//		secondHighestNumber(array);
+		secondLoweNumber(array);
 		
 	}
 	// group by here work like how many copies are there 
@@ -156,6 +157,32 @@ public class Question_Asked_In_Companies {
 					.findFirst()
 					.get();
 			System.out.println(secondeGreaterVal);
+			
+		 }
+		
+		public static void secondLoweNumber(int array[])
+		{
+			List<Integer> sortedArray = Arrays.stream(array)
+					.boxed()
+					.sorted()
+					.collect(Collectors.toList());
+			System.out.println(sortedArray);
+			
+			
+			List<Integer> firstRemoveDigit = Arrays.stream(array)
+					.boxed()
+					.sorted()
+					.skip(1)
+					.collect(Collectors.toList());
+			System.out.println(firstRemoveDigit);
+			
+			Integer secondeLowerVal = Arrays.stream(array)
+					.boxed()
+					.sorted()
+					.skip(1)
+					.findFirst()
+					.get();
+			System.out.println(secondeLowerVal);
 			
 		 }
 }
