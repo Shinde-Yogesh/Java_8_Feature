@@ -1,6 +1,7 @@
 package com.practice;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,12 @@ public class Question_Asked_In_Companies {
 //		greaterThanOneCharOccarance(str);
 //		uniqCharinStr(str);
 //		firstNonRepeatChar(str);
-		firstRepeatChar(str);
+//		firstRepeatChar(str);
+		
+		//number array
+		int array[] =  {5,9,11,2,8,21,1};
+		secondHighestNumber(array);
+		
 	}
 	// group by here work like how many copies are there 
 		public static void number_of_charOccarrance(String str)
@@ -121,4 +127,35 @@ public class Question_Asked_In_Companies {
 			
 			System.out.println(fist_non_Repeat);
 		  }
+		
+		public static void secondHighestNumber(int array[])
+		{
+			List<Integer> sortedArray = Arrays.stream(array)
+			.boxed()
+			.sorted()
+			.collect(Collectors.toList());
+			System.out.println(sortedArray);
+			
+			List<Integer> DescendingOrder = Arrays.stream(array)
+					.boxed()
+					.sorted(Comparator.reverseOrder())
+					.collect(Collectors.toList());
+			System.out.println(DescendingOrder);
+			
+			List<Integer> firstRemoveDigit = Arrays.stream(array)
+					.boxed()
+					.sorted(Comparator.reverseOrder())
+					.skip(1)
+					.collect(Collectors.toList());
+			System.out.println(firstRemoveDigit);
+			
+			Integer secondeGreaterVal = Arrays.stream(array)
+					.boxed()
+					.sorted(Comparator.reverseOrder())
+					.skip(1)
+					.findFirst()
+					.get();
+			System.out.println(secondeGreaterVal);
+			
+		 }
 }
