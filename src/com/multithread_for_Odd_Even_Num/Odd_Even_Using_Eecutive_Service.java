@@ -1,4 +1,4 @@
-package com.practice;
+package com.multithread_for_Odd_Even_Num;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
