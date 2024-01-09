@@ -1,6 +1,5 @@
 package java_8_Feature;
 
-import java.util.function.BiConsumer;
 @FunctionalInterface
 interface Sample
 {
