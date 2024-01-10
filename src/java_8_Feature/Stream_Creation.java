@@ -26,7 +26,7 @@ public class Stream_Creation {
 //		list.stream().sorted().forEach(s -> System.out.println(s)); // for ascending order
 //		list.stream().sorted(Comparator.reverseOrder()).forEach(s -> System.out.println(s));
 ////		System.out.println(list);
-		
+
 //		//Creation of the Stream as Filter
 //		
 //		@SuppressWarnings("rawtypes")
@@ -42,24 +42,20 @@ public class Stream_Creation {
 //old way
 
 		// for the map
-		Map<String,Integer> map = new HashMap<>();
+		Map<String, Integer> map = new HashMap<>();
 		map.put("eight", 8);
 		map.put("four", 4);
 		map.put("ten", 10);
 		map.put("two", 2);
-		
-		List<Entry<String,Integer>> entries = new ArrayList<>(map.entrySet());
-		Collections.sort(entries,new Comparator<Entry<String,Integer>>() {
 
-			@Override
-			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-				// TODO Auto-generated method stub
-				return o1.getKey().compareTo(o2.getKey());
-			}
-		});
-		
-		for (Entry<String, Integer> entry : entries) {
-			System.out.println(entry.getKey() + " "+ entry.getValue());
-		}
+		List<Entry<String, Integer>> entries = new ArrayList<>(map.entrySet());
+		Collections.sort(entries, (o1, o2) -> o2.getKey().compareTo(o1.getKey()));
+//		for (Entry<String, Integer> entry : entries) {
+//			System.out.println(entry.getKey() + " "+ entry.getValue());
+//		}
+
+		map.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+		System.out.println(" For the value ");
+		map.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
 	}
 }
