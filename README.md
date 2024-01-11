@@ -15,4 +15,7 @@ Lambda expressions, \
       IO Enhancements, \
       Concurrency Enhancements, \
       JDBC Enhancements etc \
+      Redece method :- \
+      ![image](https://github.com/Shinde-Yogesh/Java_8_Feature/assets/87757090/3c9a6f98-04c6-4bf9-a488-2bdbcee13cf1)
+
 
