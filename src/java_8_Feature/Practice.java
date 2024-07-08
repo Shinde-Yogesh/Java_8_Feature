@@ -12,14 +12,11 @@ public class Practice {
 				n3 = n1 + n2;
 				n1 = n2;
 				n2 = n3;
-
 				for (int j = 1; j <= n3; j++) {
-
-						System.out.print(" " + n3);
+				      System.out.print(" " + n3);
 				}
 				System.out.println();
 			}
-
 		}
 	}
 }
@@ -53,7 +50,4 @@ public class Practice {
 
 		}
 	}
-*
-*
-*
 */
